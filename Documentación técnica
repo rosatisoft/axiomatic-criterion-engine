@@ -1,0 +1,252 @@
+DOCUMENTACIÓN TÉCNICA
+Semantic Security Gateway Firewall (SSGF)
+
+Versión actual: v0.x (basado en llm-entropy-filter + Gate + Escalado por Ambigüedad)
+
+1️⃣ Visión General
+
+SSGF es un firewall semántico para sistemas LLM, diseñado para:
+
+Filtrar entrada antes del modelo
+
+Clasificar intención
+
+Detectar ambigüedad maliciosa
+
+Escalar dinámicamente a análisis profundo
+
+Reducir costo computacional
+
+Actuar como middleware proxy independiente del modelo
+
+No es un prompt.
+Es una arquitectura de decisión multinivel.
+
+2️⃣ Arquitectura General
+Client
+   │
+   ▼
+SSGF Proxy Middleware
+   │
+   ├── Fast Pipeline (determinista local)
+   │       ├─ Normalización
+   │       ├─ Hard triggers
+   │       ├─ Entropy scoring
+   │       ├─ Intention heuristics
+   │       └─ Action: ALLOW | WARN | BLOCK | ESCALATE
+   │
+   └── Deep Pipeline (LLM / análisis contextual)
+           ├─ Prompt Bench
+           ├─ Ambiguity detection
+           ├─ Semantic intent evaluation
+           └─ Final decision override
+   │
+   ▼
+LLM / Backend protegido
+
+3️⃣ Modos Operativos
+🔹 MODE: FAST
+
+100% local
+
+Determinista
+
+<1ms–5ms
+
+Sin costo API
+
+Usa rulesets JSON
+
+Ideal para:
+
+Proxy high-throughput
+
+Moderación básica
+
+API públicas
+
+🔹 MODE: DEEP
+
+Se activa por:
+
+score > threshold_warn
+
+ambigüedad detectada
+
+patrón sospechoso no concluyente
+
+Usa LLM barato (ej: gpt-4o-mini)
+
+Analiza:
+
+intención real
+
+contexto implícito
+
+ingeniería social
+
+Puede:
+
+confirmar BLOCK
+
+degradar a WARN
+
+permitir con anotación
+
+🔹 MODE: HYBRID (recomendado)
+
+Fast first → Escalado inteligente → Deep only if needed.
+
+4️⃣ Pipeline FAST
+4.1 Normalización
+
+Configuración típica:
+
+{
+  "lowercase": true,
+  "trim": true,
+  "collapse_whitespace": true,
+  "unicode_nfkc": true
+}
+
+4.2 Hard Triggers
+
+Tipos:
+
+shouting
+
+spam_keywords
+
+phishing_patterns
+
+credential_extraction
+
+social_engineering_markers
+
+Cada trigger:
+
+{
+  id,
+  type,
+  weight,
+  pattern | detector
+}
+
+4.3 Entropy Score
+
+Score final = suma ponderada de:
+
+señales estructurales
+
+densidad keywords
+
+anomalías sintácticas
+
+patrones de manipulación
+
+Resultado:
+
+entropy_score: 0.0 – 1.0
+
+4.4 Intention Evaluation (heurístico)
+
+Clasificaciones actuales:
+
+marketing_spam
+
+phishing_attempt
+
+credential_harvest
+
+prompt_injection
+
+jailbreak_attempt
+
+unknown
+
+safe
+
+Devuelve:
+
+{
+  intention,
+  confidence,
+  rationale
+}
+
+4.5 Decisión Local
+Score	Acción
+< warn	ALLOW
+warn–block	WARN
+> block	BLOCK
+ambiguous	ESCALATE
+5️⃣ Pipeline DEEP
+Activación por Ambigüedad
+
+Ejemplo clásico:
+
+“Envíame tu código de verificación”
+
+Lingüísticamente correcto.
+Semánticamente peligroso.
+
+5.1 Prompt Bench
+
+Plantilla controlada:
+
+You are a semantic security evaluator.
+Classify the real-world intention behind this message.
+Detect phishing, credential extraction, manipulation.
+Return JSON only.
+
+
+Salida estructurada:
+
+{
+  "intention": "...",
+  "risk": 0.0-1.0,
+  "justification": "...",
+  "confidence": 0.0-1.0
+}
+
+5.2 Override System
+
+Deep puede:
+
+elevar WARN → BLOCK
+
+bajar BLOCK → WARN
+
+permitir con log
+
+6️⃣ Proxy Middleware
+
+SSGF puede correr como:
+
+🔹 Express Middleware
+app.post("/chat", ssgfMiddleware, forwardToLLM)
+
+🔹 Reverse Proxy
+Client → SSGF → OpenAI
+
+🔹 SDK Embeddable
+gate(text, { ruleset })
+
+7️⃣ Diseño de Decisiones
+
+Modelo conceptual:
+
+Riesgo = Señal estructural + Intención + Ambigüedad
+
+
+Principios:
+
+Determinismo primero
+
+LLM solo si necesario
+
+Cost-aware escalation
+
+JSON-first outputs
+
+Override explicable
