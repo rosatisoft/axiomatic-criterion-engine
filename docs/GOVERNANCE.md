@@ -151,5 +151,5 @@ Contact
 
 For governance questions, security concerns, or enterprise pilots:
 
-📧 [maintainer contact]
+📧 [rosatisoft@gmail.com]
 🌐 https://github.com/rosatisoft
