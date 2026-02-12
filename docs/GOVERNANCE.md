@@ -1,4 +1,3 @@
-GOVERNANCE.md
 Governance Model — Semantic Security Gateway Firewall (SSGF)
 
 SSGF is an open-source infrastructure project focused on deterministic semantic security, auditability, and reduction of ambiguity in AI systems.
