@@ -1,8 +1,5 @@
 # Semantic Security Gateway Firewall (SSGF)
 
-On-Premise Semantic Inspection Service.
-"@ | Out-File -Encoding utf8 README.md
-
 Deterministic Semantic Security Infrastructure for LLM Applications
 
 Most LLM-based systems waste 70–90% of compute and tokens processing low-signal, ambiguous, or semantically manipulative inputs.
