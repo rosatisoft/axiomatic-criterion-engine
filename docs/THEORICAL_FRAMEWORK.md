@@ -13,6 +13,20 @@ ACE is not a probabilistic model, a heuristic filter, or a moderation layer.
 It is a **deterministic framework of criterion**, designed to preserve coherence,  
 reduce semantic entropy, and restore structural integrity in AI systems.
 
+## Foundational Axiom
+
+The Axiomatic Criterion Engine (ACE) is grounded in a prior ontological foundation:
+**The Axiom of the Absolute**, formally published and archived in Zenodo.
+
+This axiom establishes the existence of an objective, non-relative Truth that precedes
+probability, perception, and subjective interpretation. ACE does not invent this
+axiom; it operationalizes it.
+
+**Reference:**
+Rosati, E. *The Axiom of the Absolute: Ontological Foundations for Truth, Being, and Discernment*. Zenodo.  
+DOI: 10.5281/zenodo.17843412
+ORCID: 0009-0008-1974-6538
+
 ## The Ontological Discernment Standard
 
 ACE introduces a new operational standard for artificial intelligence:
