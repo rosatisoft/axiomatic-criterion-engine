@@ -222,13 +222,16 @@ docs/
 
 ## Foundational Axiom
 
-ACE is grounded in a prior ontological foundation:
+ACE is derived from **The Axiom of the Absolute**, a formally published ontological
+framework archived in Zenodo.
 
-**The Axiom of the Absolute**
-Formally published and archived in Zenodo.
+ACE does not invent this axiom — it operationalizes it as a deterministic
+decision layer for AI systems.
 
-ACE does not invent this axiom —
-it **operationalizes it**.
+**Reference**  
+Rosati, Ernesto. *The Axiom of the Absolute: Ontological Foundations for Truth and Discernment*.  
+Zenodo. DOI: (https://doi.org/10.5281/zenodo.17843412)  
+ORCID: https://orcid.org/0009-0008-1974-6538
 
 ---
 
@@ -261,21 +264,5 @@ Open for:
 
 This project aims to define
 **ontological discernment as a native AI capability**.
-
-```
-
-### Foundational Axiom
-
-ACE is derived from **The Axiom of the Absolute**, a formally published ontological
-framework archived in Zenodo. This axiom establishes an objective, non-relative
-foundation for Truth, Being, and Discernment.
-
-ACE does not invent this axiom — it operationalizes it as a deterministic
-decision layer for AI systems.
-
-**Reference**  
-Rosati, Ernesto. *The Axiom of the Absolute: Ontological Foundations for Truth and Discernment*.  
-Zenodo. DOI: (https://doi.org/10.5281/zenodo.17843412)  
-ORCID: https://orcid.org/0009-0008-1974-6538
 
 ```
