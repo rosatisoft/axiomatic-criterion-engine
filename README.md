@@ -1,73 +1,143 @@
-# Semantic Security Gateway Firewall (SSGF)
+# Axiomatic Criterion Engine (ACE)
+### Ontological Discernment Engine for LLM Systems  
+**Reference Implementation: Semantic Security Gateway Firewall (SSGF)**
 
-Deterministic Semantic Security Infrastructure for LLM Applications
+---
 
-Most LLM-based systems waste 70–90% of compute and tokens processing low-signal, ambiguous, or semantically manipulative inputs.
+## Why This Exists
 
-SSGF filters semantic noise before it reaches expensive reasoning models, transforming AI security from probabilistic moderation into deterministic, auditable decision infrastructure.
+Most LLM-based systems waste **70–90% of compute and tokens** processing
+low-signal, ambiguous, or semantically manipulative inputs.
 
-SSGF is not a prompt.
-It is not a content moderation API.
-It is a multi-layer semantic decision gateway.
+This repository implements a **deterministic layer of ontological discernment**
+that filters entropy **before** probabilistic reasoning occurs.
 
-### The New AI Standard: Ontological Discernment
+The result:
+- Lower cost
+- Fewer hallucinations
+- Auditable decisions
+- Preserved creativity without censorship
 
-ACE introduces a deterministic layer of discernment that transforms LLMs
-from probabilistic predictors into axiomatic decision systems.
+---
 
-By separating Truth from Entropy and Reality from Hallucination,
-ACE reduces unnecessary inference, lowers token consumption,
-and preserves creative expression without censorship.
+## What This Project Is
 
-What SSGF Does
+This repository contains the **reference implementation of the
+Axiomatic Criterion Engine (ACE)**, exposed operationally through the
+**Semantic Security Gateway Firewall (SSGF)**.
 
-SSGF sits between users and your LLM stack and:
+SSGF is the *execution layer*.  
+ACE is the *decision engine*.
 
-Detects spam, phishing, credential extraction, and prompt injection
+SSGF is **not**:
+- a prompt
+- a chatbot
+- a moderation API
 
-Scores structural entropy and manipulation patterns
+SSGF is **deterministic decision infrastructure**.
 
-Classifies semantic intention deterministically
+---
 
-Escalates only ambiguous cases to deep semantic analysis
+## The New AI Standard: Ontological Discernment
 
-Reduces LLM API usage by 70–90%
+**ACE transforms LLMs from probabilistic predictors into axiomatic decision systems.**
 
-Enforces decisions at middleware / proxy level
+Instead of asking *“what is likely?”*, ACE asks:
 
-Fast. Deterministic. Scalable.
+- Is this input **coherent with reality**?
+- Is it **ambiguous**, **manipulative**, or **entropic**?
+- Does it belong to **objective reality**, **fiction**, or **error**?
 
-Architecture Overview
+By separating **Truth from Entropy** and **Reality from Hallucination**,  
+ACE reduces unnecessary inference while preserving valid imagination and art.
+
+---
+
+## How SSGF and ACE Work Together
+
+SSGF operates as a **two-stage decision gateway**:
+
+### 1️⃣ FAST Pipeline (Local, Deterministic — SSGF)
+
+Executed for **every input**, with <1–5ms latency:
+
+- Normalization
+- Hard Triggers (spam, phishing, injection)
+- Structural Entropy Scoring
+- Intention Heuristics
+- Decision:
+  - `ALLOW`
+  - `WARN`
+  - `BLOCK`
+  - `ESCALATE`
+
+Most inputs terminate here.
+
+---
+
+### 2️⃣ DEEP Pipeline (Ontological — ACE)
+
+**Triggered only when ambiguity remains.**
+
+This stage invokes the **Axiomatic Criterion Engine (ACE)** to perform
+**ontological discernment**, not probabilistic guessing.
+
+ACE:
+- Classifies intention (Seeker vs Error-Validator)
+- Distinguishes **Reality / Fiction / Manipulation**
+- Enforces Truth → Being → Action consistency
+- Prevents hallucination without censoring fiction or art
+
+This is where **discernment replaces probability**.
+
+---
+
+## Architecture Overview
+
+```
+
 User / Client
-     │
-     ▼
+│
+▼
 SSGF Proxy / SDK
-     │
-     ├─ FAST Pipeline (Local, Deterministic)
-     │     ├ Normalization
-     │     ├ Hard Triggers
-     │     ├ Entropy Scoring
-     │     ├ Intention Heuristics
-     │     └ Decision: ALLOW | WARN | BLOCK | ESCALATE
-     │
-     └─ DEEP Pipeline (Only if ambiguous)
-           ├ Controlled Prompt Bench
-           ├ Semantic Intent Evaluation
-           └ Final Decision Override
-     │
-     ▼
+│
+├─ FAST Pipeline (Deterministic, Local)
+│     ├ Normalization
+│     ├ Hard Triggers
+│     ├ Entropy Scoring
+│     ├ Intention Heuristics
+│     └ Decision: ALLOW | WARN | BLOCK | ESCALATE
+│
+└─ DEEP Pipeline (ACE — Only if ambiguous)
+├ Ontological Analysis
+├ Intention Classification
+├ Reality vs Fiction Discernment
+└ Final Axiomatic Decision
+│
+▼
 Protected LLM / Backend
 
-Quickstart (2 minutes)
-npm install llm-entropy-filter
+````
 
+---
+
+## Quickstart (2 minutes)
+
+```bash
+npm install llm-entropy-filter
+````
+
+```js
 import { gate } from "llm-entropy-filter";
 
 const result = gate("FREE crypto bonus!!!");
 
 console.log(result);
+```
 
-Example Output
+### Example Output
+
+```json
 {
   "action": "WARN",
   "entropy_score": 0.38,
@@ -75,149 +145,137 @@ Example Output
   "intention": "marketing_spam",
   "confidence": 0.75
 }
+```
 
-Integration Options
+---
 
-SSGF is model-agnostic and deployment-flexible.
+## Integration Options
 
-1️⃣ Local SDK
-
+1️⃣ **Local SDK**
 Embed directly into Node.js services.
 
-gate(text, { ruleset });
+2️⃣ **Express Middleware**
 
-2️⃣ Express Middleware
+```js
 app.post("/chat", ssgfMiddleware, forwardToLLM);
+```
 
-3️⃣ Reverse Proxy
+3️⃣ **Reverse Proxy**
 Client → SSGF → OpenAI / Anthropic / Ollama
 
-4️⃣ Hybrid Escalation (Recommended)
+4️⃣ **Hybrid Escalation (Recommended)**
+Deterministic FAST → Ontological ACE only if needed.
 
-FAST local triage → DEEP semantic inspection only when needed.
+---
 
-Operating Modes
-FAST (Deterministic Local)
+## Rulesets
 
-<1–5ms latency
+Rules are JSON-based and fully auditable.
 
-Zero API cost
-
-JSON rulesets
-
-Ideal for high-throughput and edge environments
-
-DEEP (LLM-Assisted)
-
-Triggered only by ambiguity
-
-Uses low-cost or local models (e.g. Ollama, gpt-4o-mini)
-
-Structured JSON-only outputs
-
-Enforces hard security overrides
-
-HYBRID (Recommended)
-
-Determinism first. LLM only if necessary.
-
-Rulesets
-
-Rules are fully configurable via JSON.
-
-default.json → Balanced
-
-strict.json → High-security
-
-custom.json → Domain-specific policies
+* `default.json` → Balanced
+* `strict.json` → High-security
+* `custom.json` → Domain-specific
 
 Rules control:
 
-Thresholds
+* Thresholds
+* Hard triggers
+* Escalation behavior
 
-Hard triggers
+---
 
-Escalation behavior
+## Benchmarks (v1.0.0)
 
-Benchmarks (v1.0.0)
+| Metric              | Result    |
+| ------------------- | --------- |
+| Accuracy            | 93.3%     |
+| False ALLOW → BLOCK | 0         |
+| False BLOCK → ALLOW | 0         |
+| Abort rate          | 1 case    |
+| FAST latency        | <5ms      |
+| DEEP latency        | 300–800ms |
+| LLM reduction       | 70–90%    |
 
-Dataset: 30 curated phishing, spam, and benign cases
-Pipeline: FAST + DEEP (hybrid)
+Reproducible via:
 
-Metric	Result
-Accuracy	93.3%
-False BLOCK → ALLOW	0
-False ALLOW → BLOCK	0
-Abort rate	1 case
-FAST latency	<5ms
-DEEP latency	300–800ms
-LLM reduction	70–90%
+```bash
+npm run prompt:bench
+```
 
-Benchmarks are reproducible via npm run prompt:bench.
+---
 
-Security Model
+## Documentation Structure
 
-SSGF enforces Founded Determinism:
+```
+docs/
+├─ ACE_WHITEPAPER.pdf                  # Executive ACE overview
+├─ The_Axiomatic_Criterion_Engine.pdf  # Formal deductive paper
+├─ THEORETICAL_FRAMEWORK.md            # Ontological foundations
+├─ SSGF_Whitepaper_Technical.pdf       # Technical architecture
+├─ Executive_Summary.pdf
+├─ Pilot_Proposal.pdf
+├─ GOVERNANCE.md
+├─ Governance & Policy Appendix.pdf
+```
 
-Same input → same output
+---
 
-Decisions based on evidence, not probability
+## Foundational Axiom
 
-JSON-first, auditable logs
+ACE is grounded in a prior ontological foundation:
 
-Explicit rationale and flags
+**The Axiom of the Absolute**
+Formally published and archived in Zenodo.
 
-Entropy is treated as structural evidence, not model opinion.
+ACE does not invent this axiom —
+it **operationalizes it**.
 
-What This Is Not
+---
+
+## What This Is Not
 
 ❌ Not a chatbot
-
 ❌ Not a moderation prompt
-
-❌ Not a probabilistic classifier
-
+❌ Not probabilistic classification
 ❌ Not cloud-dependent
 
-SSGF is decision infrastructure.
+This is **decision infrastructure**.
 
-Whitepaper
+---
 
-📄 Semantic Security Gateway Firewall
-A Hybrid Deterministic–Semantic Architecture for LLM Protection
+## License
 
-→ See /docs/SSGF_Whitepaper_Technical.pdf
+Apache License 2.0
+Free for commercial and private use.
 
-Roadmap
+---
 
-Semantic anomaly clustering
+## Advisory & Pilots
 
-Adaptive rulesets
+Open for:
 
-Multi-language phishing detection
+* Enterprise pilots
+* Regulated environments
+* Research collaboration
+* Standardization efforts
 
-Admin dashboard & analytics
+This project aims to define
+**ontological discernment as a native AI capability**.
 
-Enterprise policy packs
+```
 
-License
+### Foundational Axiom
 
-Licensed under Apache License 2.0.
+ACE is derived from **The Axiom of the Absolute**, a formally published ontological
+framework archived in Zenodo. This axiom establishes an objective, non-relative
+foundation for Truth, Being, and Discernment.
 
-You are free to use, modify, and deploy SSGF commercially or privately.
+ACE does not invent this axiom — it operationalizes it as a deterministic
+decision layer for AI systems.
 
-Advisory & Pilots
+**Reference**  
+Rosati, Ernesto. *The Axiom of the Absolute: Ontological Foundations for Truth and Discernment*.  
+Zenodo. DOI: (https://doi.org/10.5281/zenodo.17843412)  
+ORCID: https://orcid.org/0009-0008-1974-6538
 
-SSGF is free and open-source.
-
-For:
-
-Enterprise pilots
-
-Regulated environments
-
-Custom rulesets
-
-Audits and architecture reviews
-
-Advisory support is available.
+```
