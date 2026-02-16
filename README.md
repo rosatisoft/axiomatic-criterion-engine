@@ -1,7 +1,8 @@
 # Axiomatic Criterion Engine (ACE)
 ### Ontological Discernment Engine for LLM Systems  
 **Reference Implementation: Semantic Security Gateway Firewall (SSGF)**
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18654895.svg)](https://doi.org/10.5281/zenodo.18654895)
 
 ---
 
