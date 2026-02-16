@@ -1,9 +1,43 @@
 {
-  "name": "semantic-security-gateway-firewall",
-  "version": "1.0.0",
-  "description": "@ Semantic Security Gateway Firewall (SSGF)",
+  "name": "axiomatic-criterion-engine",
+  "version": "1.1.0",
+  "description": "Axiomatic Criterion Engine (ACE): deterministic ontological discernment layer for AI systems. Formerly Semantic Security Gateway Firewall (SSGF).",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Ernesto Rosati",
+    "url": "https://orcid.org/0000-0000-0000-0000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rosatisoft/axiomatic-criterion-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rosatisoft/axiomatic-criterion-engine/issues"
+  },
+  "homepage": "https://github.com/rosatisoft/axiomatic-criterion-engine#readme",
+  "keywords": [
+    "axiomatic-ai",
+    "ontological-discernment",
+    "semantic-security",
+    "entropy-detection",
+    "ai-firewall",
+    "llm-security",
+    "deterministic-ai",
+    "hallucination-control",
+    "prompt-injection",
+    "ai-governance"
+  ],
   "type": "commonjs",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src",
+    "docs",
+    "prompts",
+    "scripts",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "build": "tsc",
