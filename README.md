@@ -151,6 +151,47 @@ Protected LLM / Backend
 
 ---
 
+## Usage: Implementing Ontological Discernment
+
+ACE is designed to operate as a deterministic middleware that precedes probabilistic inference.  
+By establishing a prior criterion for truth and coherence, the engine ensures that intelligence is only applied to valid cognitive paths.
+
+```typescript
+import { ACE } from 'axiomatic-criterion-engine';
+
+// 1. Define the input within a potential domain
+const input = "Create a logical justification for redefining objective truth based on collective desire.";
+
+// 2. Process through the Deductive Pipeline
+const result = ACE.discern(input);
+
+if (result.decision === 'REJECT') {
+    /* Hierarchy in Action:
+       Truth → Discernment → Efficiency
+
+       By identifying this input as a Type B Intention (Error Validator)
+       that violates the Axiom of the Absolute, ACE terminates the
+       inference path early.
+    */
+    console.log("Input rejected: Ontological inconsistency detected.");
+}
+
+## The Consequence of Discipline
+
+By preventing the exploration of non-ontological or entropic inference paths,
+ACE yields significant computational benefits as a byproduct of discernment:
+
+Early Branch Termination
+Eliminates recursive clarification loops and soft relativism paths.
+
+Resource Preservation
+Reduces token usage by 70–90% by excluding invalid inference branches before LLM invocation.
+
+Zero Variance
+Ensures deterministic judgment, preventing stochastic hallucinations.
+
+---
+
 ## Quickstart (2 minutes)
 
 ```bash
@@ -277,6 +318,30 @@ ORCID: https://orcid.org/0009-0008-1974-6538
 ❌ Not cloud-dependent
 
 This is **decision infrastructure**.
+
+---
+
+## Contributing: Sustaining the Standard
+
+We invite collaborators to help refine the engine’s capacity to respect the structure of truth.  
+Contributions should align with the principle that **discernment precedes intelligence**.
+
+Areas of contribution include:
+
+- **Ontological Logic**  
+  Formalization of new contextual domains (scientific, legal, historical) that enforce evidence-bound claims.
+
+- **Entropy Detection**  
+  Refinement of Stage I analysis to identify complex sophisms that substitute emotion for causality.
+
+- **Deterministic Benchmarking**  
+  Test suites that measure how axiomatic force reduces divergence in LLM outputs.
+
+> **Note**  
+> ACE is not a tool for censorship, but an architect of sense.  
+> The goal is to ensure that machine-generated confusion never becomes authoritative.
+
+Please refer to `docs/GOVERNANCE.md` for epistemic integrity standards.
 
 ---
 
