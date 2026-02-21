@@ -168,10 +168,6 @@ const result = ACE.discern(input);
 if (result.decision === 'REJECT') {
     /* Hierarchy in Action:
        Truth → Discernment → Efficiency
-
-       By identifying this input as a Type B Intention (Error Validator)
-       that violates the Axiom of the Absolute, ACE terminates the
-       inference path early.
     */
     console.log("Input rejected: Ontological inconsistency detected.");
 }
@@ -181,13 +177,13 @@ if (result.decision === 'REJECT') {
 By preventing the exploration of non-ontological or entropic inference paths,
 ACE yields significant computational benefits as a byproduct of discernment:
 
-Early Branch Termination
+**Early Branch Termination**
 Eliminates recursive clarification loops and soft relativism paths.
 
-Resource Preservation
+**Resource Preservation**
 Reduces token usage by 70–90% by excluding invalid inference branches before LLM invocation.
 
-Zero Variance
+**Zero Variance**
 Ensures deterministic judgment, preventing stochastic hallucinations.
 
 ---
@@ -196,6 +192,9 @@ Ensures deterministic judgment, preventing stochastic hallucinations.
 
 ```bash
 npm install llm-entropy-filter
+> Note: `llm-entropy-filter` provides the FAST deterministic layer (SSGF).  
+> ACE is invoked only during DEEP ontological escalation.
+
 ````
 
 ```js
