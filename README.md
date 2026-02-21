@@ -239,7 +239,9 @@ npm run prompt:bench
 ```
 docs/
 ├─ ACE_WHITEPAPER.pdf                       # Executive ACE overview
+├─ EXECUTIVE_ABSTRACT.md                    # IA labs, Arquitects, CTOs
 ├─ The_Axiomatic_Criterion_Engine.pdf       # Formal deductive paper
+├─ MANIFESTO.md                             # Filosophical & Foundational
 ├─ The_Axiomatic_Criterion_Engine(ACE).pdf  # Ontological Discernment as a Deterministic Layer
 ├─ ACE_PRINCIPLES.md                        # Principles of Ontological Discernment
 ├─ THEORETICAL_FRAMEWORK.md                 # Ontological foundations
