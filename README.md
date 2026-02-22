@@ -305,6 +305,10 @@ decision layer for AI systems.
 **Reference**  
 Rosati, Ernesto. *The Axiom of the Absolute: Ontological Foundations for Truth and Discernment*.  
 Zenodo. DOI: (https://doi.org/10.5281/zenodo.17843412)  
+Rosati, Ernesto. *THE ETHICS AS CONSCIOUS TRUTH: The Ethical Corpus Based on the Axiom of the Absolute*
+Zenodo. DOI: (https://doi.org/10.5281/zenodo.18002322)
+Rosati, Ernesto. *Tri-Axial Method of Discernment (F–C–P)*
+Zenodo. DOI: (https://doi.org/10.5281/zenodo.18182173)
 ORCID: https://orcid.org/0009-0008-1974-6538
 
 ---
